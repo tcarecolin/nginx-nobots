@@ -10,7 +10,7 @@ unzip -o "$HOME/bannedips.zip" -d "$HOME"
 
 while read -r -d , ip ; do
     if [[ $ip =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-        echo "deny $ip;" >> "$STORE/bannedips.conf"
+        echo "deny $ip;" >> "$CONF/bannedips.conf"
     else
         echo "Can not deny '$ip', mismatching format" >> $ERROR
     fi

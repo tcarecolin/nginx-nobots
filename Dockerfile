@@ -11,7 +11,8 @@ RUN apt-get update \
 COPY . /app/
 WORKDIR /app/
 
-RUN ln -sf /app/banlist.sh /etc/cron.daily
+RUN chmod u+x /app/banlist.sh && \
+    ln -sf /app/banlist.sh /etc/cron.daily/blacklist
 
 EXPOSE 80
 
